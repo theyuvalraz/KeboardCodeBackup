@@ -1,13 +1,15 @@
 #ifndef ENCODER_UPDATER
 #define ENCODER_UPDATER
+#include "color_mode.c"
+
 
 void encoder_update_user(uint8_t index, bool clockwise) {
     switch(biton32(layer_state)){
-        case 6:
+        case _LOWER:
             if (clockwise){tap_code(KC_VOLU);}
             else{tap_code(KC_VOLD);}
             break;
-        case 1:
+        case _MOUSE:
             if (clockwise) {tap_code(KC_WH_R);}
             else {tap_code(KC_WH_L);}
             break;

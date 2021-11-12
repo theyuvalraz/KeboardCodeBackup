@@ -9,8 +9,6 @@ enum preonic_layers {
   _MOUSE,
   _MAC_ACTIONS,
   _WIN_ACTIONS,
-  _NORMIE,
-  _MTGAP,
   _LOWER,
   _RAISE,
   _ADJUST,
@@ -21,8 +19,6 @@ enum preonic_keycodes {
   MOUSE,
   MAC_ACTIONS,
   WIN_ACTIONS,
-  NORMIE,
-  MTGAP,
   LOWER,
   RAISE,
 };
@@ -35,11 +31,6 @@ void keyboard_post_init_user(void) {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
-    case _QWERTY:
-        rgblight_increase_speed();
-        rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 5);
-        autoshift_enable();
-        break;
     case _MOUSE:
         PLAY_SONG(zeldaTreasureSong);
         rgblight_mode(RGBLIGHT_MODE_CHRISTMAS);
@@ -55,11 +46,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         rgblight_mode(RGBLIGHT_MODE_SNAKE);
         rgblight_sethsv_blue();
         autoshift_enable();
-        break;
-    case _NORMIE:
-        rgblight_mode(1);
-        rgblight_setrgb (0xFF, 0xFF , 0xFF);
-        autoshift_disable();
         break;
     case _LOWER:
         rgblight_mode(RGBLIGHT_MODE_SNAKE);
@@ -77,8 +63,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         autoshift_enable();
         break;
     default:
-        rgblight_mode(1);
-        rgblight_setrgb (0,  255, 0);
+        rgblight_increase_speed();
+        rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 5);
         autoshift_enable();
         break;
     }
