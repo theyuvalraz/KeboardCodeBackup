@@ -10,11 +10,10 @@
 
 // make preonic/rev3:dragon_yraz
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT_preonic_grid( \
-    KC_1,    KC_2,    KC_3,      KC_4,    KC_5,            KC_GESC,   KC_BSPC , KC_6,   KC_7,    KC_8,         KC_9,    KC_0,   \
+    KC_1,    KC_2,    KC_3,      KC_4,    KC_5,            KC_GESC,   TD(TD_BACKSPACE), KC_6,   KC_7,    KC_8,         KC_9,    KC_0,   \
     KC_Q,    KC_W,    KC_E,      KC_R,    KC_T,            TD(TD_L_BRA),     TD(TD_R_BRA),     KC_Y,             KC_U,    KC_I,         KC_O,    KC_P, \
     KC_A,    KC_S,    KC_D,      KC_F,    KC_G,            KC_TAB,           KC_QUOTE,         KC_H,             KC_J,    KC_K,         KC_L,    TD(TD_COL_PIPE), \
     KC_Z,    KC_X,    KC_C,      KC_V,    KC_B,            LSFT_T(KC_ENTER), TO(1),            KC_N,             KC_M,    TD(TD_COMMA), KC_UP  , KC_SLASH , \
@@ -46,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(0),      TO(0),            LCTL(LSFT(KC_C)), LCTL(LSFT(KC_V)), _______,          _______,              _______,   _______,          LALT(KC_LEFT), LALT(KC_RIGHT), LCTL(KC_MINUS), LCTL(KC_EQUAL) \
 ),
 [_NORMIE] = LAYOUT_preonic_grid( \
-    KC_1,    KC_2,    KC_3,      KC_4,    KC_5,             KC_GESC,   KC_BSPC,         KC_6,         KC_7,    KC_8,    KC_9,     KC_0,   \
+    KC_1,    KC_2,    KC_3,      KC_4,    KC_5,             KC_GESC,   TD_BACKSPACE,         KC_6,         KC_7,    KC_8,    KC_9,     KC_0,   \
     KC_Q,    KC_W,    KC_E,      KC_R,    KC_T,             KC_LBRC,   KC_LBRC,         KC_Y,         KC_U,    KC_I,    KC_O,     KC_P, \
     KC_A,    KC_S,    KC_D,      KC_F,    KC_G,             KC_TAB,    KC_QUOTE,        KC_H,         KC_J,    KC_K,    KC_L,     KC_SCLN, \
     KC_Z,    KC_X,    KC_C,      KC_V,    KC_B,             KC_LSHIFT, KC_SLASH,        KC_N,         KC_M,    KC_UP,   KC_MINS,  KC_EQUAL, \
@@ -54,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_MTGAP] = LAYOUT_preonic_grid( \
-    KC_1,   KC_2,   KC_3,     KC_4,    KC_5,            LGUI_T(KC_ESC),   KC_BSPC , KC_6,             KC_7,    KC_8,     KC_9,    KC_0,   \
+    KC_1,   KC_2,   KC_3,     KC_4,    KC_5,            LGUI_T(KC_ESC),   TD_BACKSPACE , KC_6,             KC_7,    KC_8,     KC_9,    KC_0,   \
     KC_Y,   KC_P,   KC_O,     KC_U,    KC_J,            TD(TD_L_BRA),     TD(TD_R_BRA),     KC_K,             KC_D,    KC_L,     KC_C,    KC_W, \
     KC_I,   KC_N,   KC_E,     KC_A,    TD(TD_COMMA),    KC_TAB,           KC_QUOTE,         KC_M,             KC_H,    KC_T,     KC_S,    KC_R, \
     KC_Q,   KC_Z,   KC_SLASH, _______, TD(TD_COL_PIPE), LSFT_T(KC_ENTER), TO(1),            KC_B,             KC_F,    KC_G,     KC_V,    KC_X, \

@@ -2,7 +2,6 @@
 #define TAP_DANCE_CONFIG
 
 
-
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
 #define KC_MAC_COPY LGUI(KC_C)
@@ -144,7 +143,7 @@ void back_finished(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_TAP: register_code16(KC_BSPACE); break;
         case SINGLE_HOLD: register_code16(KC_BSPACE); break;
         case DOUBLE_TAP: tap_code16(KC_BSPACE); register_code16(KC_BSPACE); break;
-        case DOUBLE_HOLD: register_code16(LALT(KC_BSPACE)); break;
+        case DOUBLE_HOLD: register_code16(LCTL(KC_BSPACE)); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_BSPACE); register_code16(KC_BSPACE);
     }
 }
@@ -154,7 +153,7 @@ void back_reset(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_TAP: unregister_code16(KC_BSPACE); break;
         case SINGLE_HOLD: unregister_code16(KC_BSPACE); break;
         case DOUBLE_TAP: unregister_code16(KC_BSPACE); break;
-        case DOUBLE_HOLD: unregister_code16(LALT(KC_BSPACE)); break;
+        case DOUBLE_HOLD: unregister_code16(LCTL(KC_BSPACE)); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_BSPACE);
     }
     xtap_state.state = 0;
