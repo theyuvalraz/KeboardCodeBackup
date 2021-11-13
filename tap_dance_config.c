@@ -1,23 +1,3 @@
-#ifndef TAP_DANCE_CONFIG
-#define TAP_DANCE_CONFIG
-
-
-#define KC_MAC_UNDO LGUI(KC_Z)
-#define KC_MAC_CUT LGUI(KC_X)
-#define KC_MAC_COPY LGUI(KC_C)
-#define KC_MAC_PASTE LGUI(KC_V)
-#define KC_PC_UNDO LCTL(KC_Z)
-#define KC_PC_CUT LCTL(KC_X)
-#define KC_PC_COPY LCTL(KC_C)
-#define KC_PC_PASTE LCTL(KC_V)
-#define ES_LESS_MAC KC_GRAVE
-#define ES_GRTR_MAC LSFT(KC_GRAVE)
-#define ES_BSLS_MAC ALGR(KC_6)
-#define NO_PIPE_ALT KC_GRAVE
-#define NO_BSLS_ALT KC_EQUAL
-#define LSA_T(kc) MT(MOD_LSFT | MOD_LALT, kc)
-#define BP_NDSH_MAC ALGR(KC_8)
-
 
 typedef struct {
     bool is_press_action;
@@ -136,7 +116,6 @@ void r_bra_reset(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = 0;
 }
 
-
 void back_finished(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
@@ -159,7 +138,6 @@ void back_reset(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = 0;
 }
 
-
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
@@ -170,6 +148,3 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_R_BRA]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, r_bra_finished, r_bra_reset),
     [TD_BACKSPACE] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, back_finished, back_reset, 150),
 };
-
-
-#endif

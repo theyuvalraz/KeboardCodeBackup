@@ -1,31 +1,11 @@
-
-
 #pragma once
 
 #ifdef AUDIO_ENABLE
-#   define AUDIO_CLICKY
-#   define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
-#   define MIDI_BASIC
-#   define MUSIC_MASK keycode != KC_NO
+#    define AUDIO_CLICKY
+#    define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
+#    define MIDI_BASIC
+#    define MUSIC_MASK keycode != KC_NO
 #endif
-
-/*
- * MIDI options
- */
-
-// #define MIDI_BASIC
-
-/* enable advanced MIDI features:
-   - MIDI notes can be added to the keymap
-   - Octave shift and transpose
-   - Virtual sustain, portamento, and modulation wheel
-   - etc.
-*/
-// #define MIDI_ADVANCED
-
-/* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
-// #define MIDI_TONE_KEYCODE_OCTAVES 4
-
 
 #undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX 45
@@ -45,3 +25,29 @@
 #define ENCODERS_PAD_A { B12 }
 #define ENCODERS_PAD_B { B13 }
 #define ENCODER_RESOLUTION 4
+
+enum preonic_layers {
+    _QWERTY,
+    _MOUSE,
+    _MAC_ACTIONS,
+    _WIN_ACTIONS,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
+};
+
+#define KC_MAC_UNDO LGUI(KC_Z)
+#define KC_MAC_CUT LGUI(KC_X)
+#define KC_MAC_COPY LGUI(KC_C)
+#define KC_MAC_PASTE LGUI(KC_V)
+#define KC_PC_UNDO LCTL(KC_Z)
+#define KC_PC_CUT LCTL(KC_X)
+#define KC_PC_COPY LCTL(KC_C)
+#define KC_PC_PASTE LCTL(KC_V)
+#define ES_LESS_MAC KC_GRAVE
+#define ES_GRTR_MAC LSFT(KC_GRAVE)
+#define ES_BSLS_MAC ALGR(KC_6)
+#define NO_PIPE_ALT KC_GRAVE
+#define NO_BSLS_ALT KC_EQUAL
+#define LSA_T(kc) MT(MOD_LSFT | MOD_LALT, kc)
+#define BP_NDSH_MAC ALGR(KC_8)
