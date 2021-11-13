@@ -18,17 +18,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             autoshift_enable();
             break;
         case _LOWER:
-            rgblight_mode(RGBLIGHT_MODE_SNAKE);
+            rgblight_mode(RGBLIGHT_MODE_BREATHING);
             rgblight_sethsv_magenta();
             autoshift_enable();
             break;
         case _RAISE:
-            rgblight_mode(RGBLIGHT_MODE_SNAKE);
+            rgblight_mode(RGBLIGHT_MODE_BREATHING);
             rgblight_sethsv_yellow();
             autoshift_enable();
             break;
         case _ADJUST:
-            rgblight_mode(RGBLIGHT_MODE_SNAKE);
+            rgblight_mode(RGBLIGHT_MODE_BREATHING);
             rgblight_sethsv_blue();
             autoshift_enable();
             break;

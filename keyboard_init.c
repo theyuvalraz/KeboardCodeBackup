@@ -13,11 +13,18 @@ enum preonic_keycodes {
 /*Here I set the first rgb mode*/
 void keyboard_post_init_user(void) {
     rgblight_enable();  // Enables RGB, without saving settings
-    rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
 }
 
 void suspend_wakeup_init_user(void) {
+    rgblight_enable();  // Enables RGB, without saving settings
     rgblight_mode(RGBLIGHT_MODE_BREATHING);
     rgblight_sethsv_chartreuse();
+    startup_user();
+}
+
+void startup_user()
+{
+    wait_ms(20);
     PLAY_SONG(zeldaPazzleSong);
 }
+

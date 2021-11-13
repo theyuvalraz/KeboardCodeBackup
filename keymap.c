@@ -72,20 +72,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MAC_ACTIONS:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_MAC_ACTIONS);
+                layer_move(_MAC_ACTIONS);
             }
             return false;
             break;
         case WIN_ACTIONS:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_WIN_ACTIONS);
+                layer_move(_WIN_ACTIONS);
             }
             return false;
             break;
 
         case MOUSE:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_MOUSE);
+                layer_move(_MOUSE);
             }
             return false;
             break;
